@@ -12,5 +12,5 @@ from rest_framework.permissions import IsAuthenticated
 class Transporter_View(ModelViewSet):
     queryset  = TruckOwnerModel.objects.all()
     serializer_class = TruckOwnerModelSerializer
-    authetication_classes = [SessionAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authetication_classes = [SessionAuthentication]
+    # permission_classes = [IsAuthenticated]
