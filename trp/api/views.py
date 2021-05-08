@@ -19,9 +19,9 @@ from .serializers import  *
 
 from django.shortcuts import render
 from rest_framework.decorators import api_view
-from  .models import Student
+# from  .models import Student
 from rest_framework.response import Response
-from .serializers import StudentSerializers
+# from .serializers import StudentSerializers
 from rest_framework import status
 # Create your views here.
 @api_view(['POST','GET','PUT','DELETE'])
