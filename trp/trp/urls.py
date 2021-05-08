@@ -12,8 +12,9 @@ router.register('reg1',views.Transporter_View,basename='reg1')
 # router.register('reg3',views.Vehicle_Registration_View,basename='reg3')
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(router.urls)),
-    path('auth/',include('rest_framework.urls')),
-    path('gettoken/',obtain_auth_token),
+    # path('',include(router.urls)),
+    # path('auth/',include('rest_framework.urls')),
+    # path('gettoken/',obtain_auth_token),
+    path('stu/',views.student_data,name='stu'),
 ]+static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
 
