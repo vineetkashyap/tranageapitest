@@ -17,7 +17,7 @@ def student_data(request):
     if request.method =='GET':
         id = request.data.get('id',None)
         if id is not None:
-            stu = TruckOwnerModel.objects.get(id=id)
+            stu = TruckOwnerModel.objects.get(email_id=id)
             serializer = TruckOwnerModelSerializer(stu)
             return  Response(serializer.data,status=status.HTTP_200_OK)
         else:
