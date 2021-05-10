@@ -20,10 +20,10 @@ def student_data(request):
             stu = TruckOwnerModel.objects.get(id=id)
             serializer = TruckOwnerModelSerializer(stu)
             return  Response(serializer.data,status=status.HTTP_200_OK)
-        # else:
-        #     stu =Student.objects.all()
-        #     serializer = StudentSerializers(stu,many=True)
-        #     return  Response(serializer.data,status=status.HTTP_200_OK)
+        else:
+            stu =TruckOwnerModel.objects.all()
+            serializer = TruckOwnerModelSerializer(stu,many=True)
+            return  Response(serializer.data,status=status.HTTP_200_OK)
 class TruckOwnerModel_View(ModelViewSet):
     queryset  = TruckOwnerModel.objects.all()
     serializer_class = TruckOwnerModelSerializer
