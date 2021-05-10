@@ -10,12 +10,12 @@ router= DefaultRouter()
 router.register('reg1',views.TruckOwnerModel_View,basename='reg1')
 router.register('reg2',views.TruckOwnerVehicleRegistraionModel_View,basename='reg2')
 router.register('reg3',views.TruckOwnerDriverRegistration_View,basename='reg3')
-router.register('getuser',views.student_data,basename='getuser')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include(router.urls)),
     path('auth/',include('rest_framework.urls')),
     path('gettoken/',obtain_auth_token),
-    # path('getuser/',views.student_data,name='stu'),
+    path('getuser/',views.student_data,name='stu'),
 ]+static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
 
