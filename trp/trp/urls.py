@@ -8,8 +8,8 @@ from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework.routers import DefaultRouter
 router= DefaultRouter()
 router.register('reg1',views.Transporter_View,basename='reg1')
-# router.register('reg2',views.Truck_Owner_View,basename='reg2')
-# router.register('reg3',views.Vehicle_Registration_View,basename='reg3')
+router.register('reg2',views.TruckOwnerVehicleRegistraionModel_View,basename='reg2')
+router.register('reg3',views.TruckOwnerDriverRegistration_View,basename='reg3')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include(router.urls)),

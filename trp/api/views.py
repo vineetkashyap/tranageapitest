@@ -14,5 +14,15 @@ class Transporter_View(ModelViewSet):
     serializer_class = TruckOwnerModelSerializer
     authetication_classes = [SessionAuthentication]
     permission_classes = [IsAuthenticated]
+class TruckOwnerVehicleRegistraionModel_View(ModelViewSet):
+    queryset  = TruckOwnerVehicleRegistraionModel.objects.all()
+    serializer_class = TruckOwnerVehicleRegistraionModelSerializer
+    authetication_classes = [SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+class TruckOwnerDriverRegistration_View(ModelViewSet):
+    queryset  = TruckOwnerDriverRegistration.objects.all()
+    serializer_class = TruckOwnerDriverRegistrationSerializer
+    authetication_classes = [SessionAuthentication]
+    permission_classes = [IsAuthenticated]
 
 
