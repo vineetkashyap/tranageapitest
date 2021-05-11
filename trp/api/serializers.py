@@ -20,6 +20,10 @@ class TransporterVehicleRegistraionModelSerializer(serializers.ModelSerializer):
     class Meta:
         model =TransporterVehicleRegistraionModel
         fields  = '__all__'
+class TranspoterDriverRegistrationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =TranspoterDriverRegistration
+        fields  = '__all__'
 class Tranage_AgentSerializer(serializers.ModelSerializer):
     class Meta:
         model =Tranage_Agent
