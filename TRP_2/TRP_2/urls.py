@@ -7,7 +7,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 from rest_framework.routers import DefaultRouter
 router= DefaultRouter()
-router.register('reg1',views.TruckOwnerModel_View,basename='reg1')
+router.register('truckownerregistration/',views.TruckOwnerModel_View,basename='truckownerregistration')
 # router.register('reg2',views.TruckOwnerVehicleRegistraionModel_View,basename='reg2')
 # router.register('reg3',views.TruckOwnerDriverRegistration_View,basename='reg3')
 
@@ -18,4 +18,3 @@ urlpatterns = [
     path('gettoken/',obtain_auth_token),
     # path('getuser/',views.student_data,name='stu'),
 ]+static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
-

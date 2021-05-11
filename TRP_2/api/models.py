@@ -1,0 +1,26 @@
+from django.db import models
+
+# Create your models here.
+class TruckOwnerModel(models.Model):
+    name = models.CharField(max_length=50)
+    father_name = models.CharField(max_length=50)
+    mobile_number = models.CharField(max_length=50,unique=True)
+    alternate_mobile_number = models.CharField(max_length=50)
+    email_id  = models.EmailField(max_length=254,unique=True)
+    address  = models.CharField(max_length=50)
+    aadhar_number = models.CharField( max_length=50,unique=True)
+    pan_number = models.CharField(max_length=50,unique=True)
+    bank_account_name = models.CharField( max_length=50)
+    bank_account_number = models.IntegerField()
+    ifsc_code  = models.CharField(max_length=50)
+    bank_name = models.CharField( max_length=50)
+    branch_name = models.CharField(max_length=50)
+    aadhar_front = models.FileField(upload_to='media', max_length=100)
+    aadhar_back = models.FileField(upload_to='media', max_length=100)
+    pan_card_front = models.FileField(upload_to='media', max_length=100)
+    cancelled_cheque= models.FileField(upload_to='media', max_length=100)
+    owner_image = models.FileField(upload_to='media', max_length=100)
+    sign = models.FileField(upload_to='media', max_length=100)
+    registered_on=models.DateTimeField(auto_now_add=True)
+    registered_by =models.CharField(max_length=50)
+    user_type = models.CharField(max_length=50)
