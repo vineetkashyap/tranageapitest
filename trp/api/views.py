@@ -74,7 +74,7 @@ class TruckOwnerModel_View(viewsets.ViewSet):
     def retrieve(self,request,pk=None):
         id =pk
         if id is not  None:
-            stu = TruckOwnerModel.objects.get(id=id)
+            stu = TruckOwnerModel.objects.get(email_id=id)
             serializers= TruckOwnerModelSerializer(stu)
             return Response(serializers.data)
     def  create(self,request):
@@ -102,9 +102,4 @@ class TruckOwnerModel_View(viewsets.ViewSet):
             res ={"msg":"data updated successfully"}
             return Response(res,status=status.HTTP_202_ACCEPTED)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
-    def destroy(self,request,pk):
-        id=pk
-        stu=TruckOwnerModel.objects.get(id=id)
-        stu.delete()
-        res={"msg":"data deleted"}
-        return Response(res,status=status.HTTP_200_OK)
+    

@@ -21,6 +21,8 @@ class TruckOwnerModel(models.Model):
     cancelled_cheque_xerox = models.FileField(upload_to='media', max_length=100)
     photo = models.FileField(upload_to='media', max_length=100)
     sign = models.FileField(upload_to='media', max_length=100)
+    registered_on = models.DateTimeField(auto_now_add=True)
+    registered_by = models.CharField(max_length=50)
 
 class TruckOwnerVehicleRegistraionModel(models.Model):
     truck_owner = models.ForeignKey(TruckOwnerModel,on_delete=models.CASCADE)
