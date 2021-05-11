@@ -81,7 +81,7 @@ class TruckOwnerModel_View(viewsets.ViewSet):
         serializers = TruckOwnerModelSerializer(data=request.data)
         if serializers.is_valid():
             serializers.save()
-            res ={'msg':'data inserted successfully'}
+            res ={'msg':'data inserted successfully',"data":request.data}
             return Response(res,status=status.HTTP_201_CREATED)
         return Response(serializers.errors,status=status.HTTP_400_BAD_REQUEST)
     def  partial_update(self,request,pk):
