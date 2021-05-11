@@ -16,5 +16,5 @@ urlpatterns = [
     path('',include(router.urls)),
     path('auth/',include('rest_framework.urls')),
     path('gettoken/',obtain_auth_token),
-    # path('getuser/',views.student_data,name='stu'),
+    path('getuser/',views.student_data,name='stu'),
 ]+static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
